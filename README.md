@@ -1,0 +1,16 @@
+step1
+
+rosで生成したデータをアクトロイドで使えるようにデータを加工する。rosでは動画中の人の顔の面積と人の口の面積を格納したデータが生成されている。（inputファイルの中に入っているcsvデータ。rosが23fpsで動くので、データ数はおよそ23[1/s]x60[s]=1380）
+
+python mouth_movement_with_face.py input/Filename.csv
+
+上記のコマンドでmouth_face_move_range.csvというフォルダが生成される。これには各フレーム毎の顔に対しての口の大きさが格納されている。
+
+step2
+
+step1で生成したmouth_face_move_range.csvを加工する。このデータをアクトロイドで取り扱えるように10fpsのデータに加工する。上記のデータは23fps用に生成されているので、 10/23倍したデータ数でデータを加工する。
+
+python trans_eri_face.py
+
+上記のコマンドでeri_mouth_face.csvが生成される。
+# python_openface_eyemoving

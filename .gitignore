@@ -1,0 +1,12 @@
+#csvは読み込まない
+*.csv
+
+#pngも読み込まない
+*.png
+
+#inputたちも読み込まない
+/input
+/result
+
+.DS_Store
+
